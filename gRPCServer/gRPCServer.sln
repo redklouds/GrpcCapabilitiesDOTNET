@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCServer", "gRPCServer\gR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTServer", "RESTServer\RESTServer.csproj", "{0433800C-73BF-430E-9271-D7157BB6E714}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Models", "Common.Models\Common.Models.csproj", "{4EB5D245-4C8E-44A0-955C-B7CBD301F420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0433800C-73BF-430E-9271-D7157BB6E714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0433800C-73BF-430E-9271-D7157BB6E714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0433800C-73BF-430E-9271-D7157BB6E714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB5D245-4C8E-44A0-955C-B7CBD301F420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB5D245-4C8E-44A0-955C-B7CBD301F420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB5D245-4C8E-44A0-955C-B7CBD301F420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB5D245-4C8E-44A0-955C-B7CBD301F420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
