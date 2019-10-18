@@ -29,6 +29,8 @@ namespace RESTServer.Controllers
         }
     
 
+
+
         [HttpPost]
         [Route("GetMemberData")]
         public ActionResult getMemberData([FromBody] DataRequst dataRequest)
@@ -37,6 +39,11 @@ namespace RESTServer.Controllers
             if(dataRequest == null)
             {
                 return BadRequest("Error parsing Data Request");
+            }
+
+            if(dataRequest.MemberID != null)
+            {
+                
             }
 
         }
