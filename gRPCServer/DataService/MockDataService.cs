@@ -1,19 +1,25 @@
-﻿using Repository;
+﻿using Common.Models;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataService
 {
-    class MockDataService: DataServiceBase, IDataService
+    public class MockDataService: DataServiceBase, IDataService
     {
         public MockDataService(IRepository r): base(repo: r)
         {}
 
 
-        public void GetMemberData(string memberID)
+        public DataResponse GetMemberData(string memberID)
         {
-            this.repository
+            DataResponse response = this.repository.GetMemberData(memberID);
+            if(response.StatusCode == 200)
+            {
+                return response;
+            }
+            return null;
         }
     }
 }

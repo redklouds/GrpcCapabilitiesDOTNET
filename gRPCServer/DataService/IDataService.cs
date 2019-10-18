@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Common.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataService
 {
-    interface IDataService
+    public interface IDataService
     {
 
-        public void GetMemberData(string memberId);
+        public DataResponse GetMemberData(string memberId);
     }
 }

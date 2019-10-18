@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Repository
 {
-    class MockDataRepository: IRepository
+    public class MockDataRepository: IRepository
     {
 
         public MockDataRepository() { }
@@ -18,7 +18,7 @@ namespace Repository
                 FirstName = "Dante",
                 LastName = "Ly",
                 City = "Seattle",
-                MemberID = "69696969",
+                MemberID = memberId,
                 SSN = "242342"
             };
 
