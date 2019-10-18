@@ -24,7 +24,7 @@ namespace RESTServer.Controllers
         [Route("MemberIndex")]
         public ActionResult tester()
         {
-            return Ok("YOLO SWAGGER");
+            return Ok("This is member Index");
         }
     }
 }
