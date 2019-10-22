@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Common.Models
 {
-    public class DataRequst
+    public class DataRequest
     {
         public string MemberID { get; set; }
 
