@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+//below is the defined namespace you can find these files in when accessing them via client and server files
+//we can extract these out if needed.
+
+//having these protos in a shared project, requires the depdencies of
+//Google.Protobuf
+//GRPC
+//gRPC.tools
+option csharp_namespace = "Common.Models.Grpc.Protos";
+//you can also use package Commmon.Models.Grpc.Protos;
+
+
+package Common.Models.Chat;
+
+
+message ChatMessage {
+	string from = 1;
+	string message = 2;
+
+}
