@@ -40,7 +40,7 @@ namespace RESTServer.Controllers
 
         [HttpPost]
         [Route("GetMemberData")]
-        public ActionResult getMemberData([FromBody] DataRequst dataRequest)
+        public ActionResult getMemberData([FromBody] DataRequest dataRequest)
         {
             //returns a single member data given the member ID
             if(dataRequest == null)
