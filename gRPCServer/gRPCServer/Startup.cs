@@ -29,6 +29,8 @@ namespace gRPCServer
             }
 
             app.UseRouting();
+            //reqiured to put here
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

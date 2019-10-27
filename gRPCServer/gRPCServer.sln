@@ -3,15 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCServer", "gRPCServer\gRPCServer.csproj", "{06F5DBC5-C589-4A8D-9B06-8DF0E43C8E97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCServer", "gRPCServer\gRPCServer.csproj", "{06F5DBC5-C589-4A8D-9B06-8DF0E43C8E97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTServer", "RESTServer\RESTServer.csproj", "{0433800C-73BF-430E-9271-D7157BB6E714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTServer", "RESTServer\RESTServer.csproj", "{0433800C-73BF-430E-9271-D7157BB6E714}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Models", "Common.Models\Common.Models.csproj", "{4EB5D245-4C8E-44A0-955C-B7CBD301F420}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Models", "Common.Models\Common.Models.csproj", "{4EB5D245-4C8E-44A0-955C-B7CBD301F420}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService", "DataService\DataService.csproj", "{FB1D6C9E-0ED9-4770-A26D-84C8819D636E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService", "DataService\DataService.csproj", "{FB1D6C9E-0ED9-4770-A26D-84C8819D636E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{9862A0E6-59FE-4A66-A6D1-3231B72ECCC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{9862A0E6-59FE-4A66-A6D1-3231B72ECCC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCServer.Tests", "gRPCServer.Tests\gRPCServer.Tests.csproj", "{D13F8DB6-5C70-4C7C-9E56-67488E0F71F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTServer.Tests", "RESTServer.Tests\RESTServer.Tests.csproj", "{262E4776-1E19-4180-A3B2-7D1F4DFEA98B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCClient", "gRPCClient\gRPCClient.csproj", "{AFE4C773-016A-4EA7-9C80-FE5D23DEB772}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTClient", "RESTClient\RESTClient.csproj", "{66E81169-A4D6-4431-83C5-930A0A6C5EA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BiDirectionalStreaming", "BiDirectionalStreaming", "{951A5B96-FF83-4A31-BC7F-F3F9EBAE58B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +49,22 @@ Global
 		{9862A0E6-59FE-4A66-A6D1-3231B72ECCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9862A0E6-59FE-4A66-A6D1-3231B72ECCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9862A0E6-59FE-4A66-A6D1-3231B72ECCC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D13F8DB6-5C70-4C7C-9E56-67488E0F71F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D13F8DB6-5C70-4C7C-9E56-67488E0F71F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D13F8DB6-5C70-4C7C-9E56-67488E0F71F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D13F8DB6-5C70-4C7C-9E56-67488E0F71F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262E4776-1E19-4180-A3B2-7D1F4DFEA98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262E4776-1E19-4180-A3B2-7D1F4DFEA98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262E4776-1E19-4180-A3B2-7D1F4DFEA98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262E4776-1E19-4180-A3B2-7D1F4DFEA98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE4C773-016A-4EA7-9C80-FE5D23DEB772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE4C773-016A-4EA7-9C80-FE5D23DEB772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE4C773-016A-4EA7-9C80-FE5D23DEB772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE4C773-016A-4EA7-9C80-FE5D23DEB772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E81169-A4D6-4431-83C5-930A0A6C5EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E81169-A4D6-4431-83C5-930A0A6C5EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E81169-A4D6-4431-83C5-930A0A6C5EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E81169-A4D6-4431-83C5-930A0A6C5EA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
