@@ -1,33 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Protos\chat.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.10.0" />
-    <PackageReference Include="Grpc" Version="2.24.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.24.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Protos\member.proto">
-      <GrpcServices>Both</GrpcServices>
-    </None>
-  </ItemGroup>
-
-    <!--NEED the below lines-->
-  <!--Following lines allow creation of either "Clint", "Server", or "Both" c# interface implementations-->
-  <ItemGroup>
-    <Protobuf Include="Protos\chat.proto" GrpcServices="Both" />
-    <Protobuf Include="Protos\member.proto" GrpcServices="Both" />
-  </ItemGroup>
 
 </Project>
