@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCServer.Tests", "gRPCSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTServer.Tests", "RESTServer.Tests\RESTServer.Tests.csproj", "{262E4776-1E19-4180-A3B2-7D1F4DFEA98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCClient", "gRPCClient\gRPCClient.csproj", "{AFE4C773-016A-4EA7-9C80-FE5D23DEB772}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCClient", "gRPCClient\gRPCClient.csproj", "{AFE4C773-016A-4EA7-9C80-FE5D23DEB772}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTClient", "RESTClient\RESTClient.csproj", "{66E81169-A4D6-4431-83C5-930A0A6C5EA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTClient", "RESTClient\RESTClient.csproj", "{66E81169-A4D6-4431-83C5-930A0A6C5EA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BiDirectionalStreaming", "BiDirectionalStreaming", "{951A5B96-FF83-4A31-BC7F-F3F9EBAE58B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

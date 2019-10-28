@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\chat.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.10.0" />
     <PackageReference Include="Grpc" Version="2.24.0" />
     <PackageReference Include="Grpc.Tools" Version="2.24.0">
@@ -22,6 +26,7 @@
     <!--NEED the below lines-->
   <!--Following lines allow creation of either "Clint", "Server", or "Both" c# interface implementations-->
   <ItemGroup>
+    <Protobuf Include="Protos\chat.proto" GrpcServices="Both" />
     <Protobuf Include="Protos\member.proto" GrpcServices="Both" />
   </ItemGroup>
 

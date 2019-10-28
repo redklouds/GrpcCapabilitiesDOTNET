@@ -17,12 +17,12 @@ namespace Repository
 
             var m = new Common.Models.Grpc.Protos.Member
             {
-                FirstName = "Swag",
-                Lastname = "slappy",
+                FirstName = "Danny",
+                Lastname = "Ly",
                 City = "Seattle",
                 MemberId = memberId,
-                SSN = "42424",
-                State    = "Washington",
+                SSN = "1234567899",
+                State = "Washington",
                 Age = 32,
                 Street = "BakerView Rd.",
                 BloodType = "A",
@@ -32,6 +32,17 @@ namespace Repository
                 
             };
 
+            List<Case> cases = new List<Case>
+            {
+                new Case
+                {
+                    CaseId = "ABCDEFG",
+                    Subject = "Check Up",
+                    Title  = "Title",
+                }
+            };
+            m.Cases.Add(cases);
+            /*
             List<Case> caseList = new List<Case>();
             for(int i=0; i < 10; i++)
             {
@@ -44,15 +55,6 @@ namespace Repository
                     });
             };
             m.Cases.Add(caseList);
-            /*
-            Member testMbr = new Member
-            {
-                FirstName = "Dante",
-                LastName = "Ly",
-                City = "Seattle",
-                MemberID = memberId,
-                SSN = "242342"
-            };
             */
 
             //TODO other things such as getting data from somewhere else lol
