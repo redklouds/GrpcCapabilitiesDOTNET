@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Loaded="MainWindow_Loaded">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="62,383,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="19,379,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Message" Content="Label" HorizontalAlignment="Left" Margin="250,379,0,0" VerticalAlignment="Top" Width="65"/>
-        <TextBox x:Name="MessageBox" HorizontalAlignment="Left" Margin="362,392,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="526,392,0,0" VerticalAlignment="Top" Click="button_Click"/>
-        <TextBox x:Name="chatMessages" HorizontalAlignment="Left" Margin="19,29,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="495" Height="259" />
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="93,389,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="label" Content="Chat Name" HorizontalAlignment="Left" Margin="19,385,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.974,-0.422"/>
+        <Label x:Name="Message" Content="Message" HorizontalAlignment="Left" Margin="254,387,0,0" VerticalAlignment="Top" Width="64" Height="30" RenderTransformOrigin="0.427,-0.01"/>
+        <TextBox x:Name="MessageBox" HorizontalAlignment="Left" Margin="323,385,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Height="32"/>
+        <Button x:Name="button" Content="Send Message" HorizontalAlignment="Left" Margin="474,391,0,0" VerticalAlignment="Top" Click="button_Click"/>
+        <TextBox x:Name="chatMessages" HorizontalAlignment="Left" Margin="19,29,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="535" Height="336" />
 
     </Grid>
 </Window>

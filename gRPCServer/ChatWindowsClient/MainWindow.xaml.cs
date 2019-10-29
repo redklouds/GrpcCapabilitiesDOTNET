@@ -115,6 +115,7 @@ namespace ChatWindowsClient
             catch (RpcException)
             {
                 _call = null;
+                
                 throw;
             }
         }
