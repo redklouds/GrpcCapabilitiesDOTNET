@@ -26,7 +26,7 @@ namespace ChatWindowsClient
 
         private const string HOST = "localhost";
         private const int PORT = 8080;
-
+        private bool loggedIn = false;
         //the protobuf generated code for the client
         private ChatService.ChatServiceClient _chatClient;
         //GRPC duplex streaming
@@ -52,37 +52,15 @@ namespace ChatWindowsClient
             return true;
         }
 
-        private async void MainWindow_Loaded(object sender, EventArgs e)
-        {
-            // Open a connection to the server
-            try
-            {
-                using (_call = _chatClient.chat())
-                {
-                    // Read messages from the response stream
-                    while (await _call.ResponseStream.MoveNext(CancellationToken.None))
-                    {
-                        var serverMessage = _call.ResponseStream.Current;
-                        var otherClientMessage = serverMessage.Message;
-                        var displayMessage = string.Format("{0}:{1}{2}", otherClientMessage.From, otherClientMessage.Message, Environment.NewLine);
-                        chatMessages.Text += displayMessage;
-                    }
-                    // Format and display the message
-                }
-            }
-            catch (RpcException)
-            {
-                _call = null;
-                throw;
-            }
-        }
+        
 
-
-        private async void button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            
             var message = new ChatMessage
             {
-                From = textBox.Text,
+                From = UserNameTxtBox.Text,
                 Message = MessageBox.Text
             };
 
@@ -92,14 +70,11 @@ namespace ChatWindowsClient
             }
         }
 
-
-
-        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private async Task StartClientChatService()
         {
-            // Open a connection to the server
             try
             {
-                using (_call = _chatClient.chat())
+                using (_call = _chatClient.chat(headers:))
                 {
                     // Read messages from the response stream
                     while (await _call.ResponseStream.MoveNext(CancellationToken.None))
@@ -115,9 +90,69 @@ namespace ChatWindowsClient
             catch (RpcException)
             {
                 _call = null;
-                
-                throw;
+
+                //throw;
             }
+        }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            SendMessage.IsEnabled = loggedIn;
+            // Open a connection to the server
+            await StartClientChatService();
+        }
+
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Login_Click(object sender, RoutedEventArgs e)
+        {
+            if(_call != null && UserNameTxtBox.Text != string.Empty)
+            {
+                RequestStatus result =  await _chatClient.AddUserAsync(new User
+                {
+                    Name = UserNameTxtBox.Text
+                });
+
+                if(result.Status is STATUS.Ok)
+                {
+                    LoginButton.Content = "Log Out";
+                }
+                else
+                {
+                    chatMessages.AppendText("\nError signing in with the respective userName");
+                }
+            }
+          
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            /*
+            if(UserNameTxtBox.Text != string.Empty)
+            {
+                //enable the send message button if there is a Username!
+                SendMessage.IsEnabled = true;
+            }
+            else
+            {
+                //grey out the sendMessage button if there is no UserName 
+                SendMessage.IsEnabled = true;
+            }
+            */
         }
     }
 }

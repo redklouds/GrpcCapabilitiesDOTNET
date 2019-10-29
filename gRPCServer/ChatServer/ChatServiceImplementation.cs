@@ -17,6 +17,31 @@ namespace ChatServer
         public static HashSet<IServerStreamWriter<ChatMessageFromServer>> responseStreams = new HashSet<IServerStreamWriter<ChatMessageFromServer>>();
 
 
+        public static Dictionary<string, IServerStreamWriter<ChatMessageFromServer>> SessionUserStreams = new Dictionary<string, IServerStreamWriter<ChatMessageFromServer>>();
+        public override  Task<RequestStatus> AddUser(User user, ServerCallContext context)
+        {
+            if (SessionUserStreams.ContainsKey(user.Name))
+            {
+                return Task.FromResult(new RequestStatus
+                {
+                    Status = STATUS.Bad
+                });
+            }
+
+            //SessionUserStreams.Add()
+            return Task.FromResult(new RequestStatus
+            {
+                Status = STATUS.Ok
+            }
+            );
+        }
+
+
+        private void addUserHelper()
+        {
+
+        }
+
         //time to override the service method of the base class and implement the implementation for that signature
         public override async Task chat(
             IAsyncStreamReader<ChatMessage> requestStream, //this is a 'handle' allows asyncchronus reading from channels
@@ -29,7 +54,7 @@ namespace ChatServer
             //send ChatMessages to, and it will then broadcast those messages to all registered clients on its registration list.
 
             //this will add a client to the response streams or clients here
-
+            
             responseStreams.Add(responseStream);
 
             //we can think of the StreamReader as a array of bytes (Messagges) or linked list that we are reading from
