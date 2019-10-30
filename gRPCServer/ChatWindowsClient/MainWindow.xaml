@@ -1,0 +1,20 @@
+﻿<Window x:Class="ChatWindowsClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatWindowsClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="721" Closing="Window_Closing" Closed="Window_Closed">
+    <Grid Loaded="MainWindow_Loaded" Height="450">
+        <TextBox x:Name="UserNameTxtBox" HorizontalAlignment="Left" Margin="93,389,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged" />
+        <Label x:Name="label" Content="Chat Name" HorizontalAlignment="Left" Margin="19,385,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.974,-0.422"/>
+        <Label x:Name="Message" Content="Message" HorizontalAlignment="Left" Margin="254,387,0,0" VerticalAlignment="Top" Width="64" Height="30" RenderTransformOrigin="0.427,-0.01"/>
+        <TextBox x:Name="MessageBox" HorizontalAlignment="Left" Margin="323,385,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Height="32"/>
+        <Button x:Name="SendMessage" Content="Send Message" HorizontalAlignment="Left" Margin="574,392,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox x:Name="chatMessages" HorizontalAlignment="Left" Margin="19,29,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="535" Height="336" />
+        <ListBox x:Name="UsersList" Margin="574,29,10,85" SelectionChanged="listBox_SelectionChanged"/>
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="659,392,0,0" VerticalAlignment="Top" Click="Login_Click"/>
+
+    </Grid>
+</Window>
