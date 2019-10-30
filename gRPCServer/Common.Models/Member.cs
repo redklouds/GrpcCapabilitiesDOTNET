@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Common.Models.Depreciated
+namespace Common.Models
 {
     public class Member
     {
