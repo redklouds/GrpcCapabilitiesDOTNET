@@ -65,7 +65,7 @@ namespace ChatWindowsClient
             };
 
             if (_call != null)
-            {
+            { 
                 await _call.RequestStream.WriteAsync(message);
             }
         }
@@ -74,7 +74,7 @@ namespace ChatWindowsClient
         {
             try
             {
-                using (_call = _chatClient.chat(headers:))
+                using (_call = _chatClient.chat())
                 {
                     // Read messages from the response stream
                     while (await _call.ResponseStream.MoveNext(CancellationToken.None))
@@ -98,9 +98,30 @@ namespace ChatWindowsClient
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
-            SendMessage.IsEnabled = loggedIn;
+            //SendMessage.IsEnabled = loggedIn;
             // Open a connection to the server
-            await StartClientChatService();
+            //await StartClientChatService();
+            try
+            {
+                using (_call = _chatClient.chat())
+                {
+                    // Read messages from the response stream
+                    while (await _call.ResponseStream.MoveNext(CancellationToken.None))
+                    {
+                        var serverMessage = _call.ResponseStream.Current;
+                        var otherClientMessage = serverMessage.Message;
+                        var displayMessage = string.Format("{0}:{1}{2}", otherClientMessage.From, otherClientMessage.Message, Environment.NewLine);
+                        chatMessages.Text += displayMessage;
+                    }
+                    // Format and display the message
+                }
+            }
+            catch (RpcException rpcEx)
+            {
+                _call = null;
+
+                //throw;
+            }
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

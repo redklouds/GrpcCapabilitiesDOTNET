@@ -32,8 +32,7 @@ namespace ChatServer
             return Task.FromResult(new RequestStatus
             {
                 Status = STATUS.Ok
-            }
-            );
+            });
         }
 
 
