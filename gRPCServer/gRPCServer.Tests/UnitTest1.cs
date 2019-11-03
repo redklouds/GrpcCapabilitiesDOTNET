@@ -24,6 +24,7 @@ namespace gRPCServer.Tests
         [Test]
         public async Task TestGetMemberData()
         {
+            //final stable product
             //this will be testing the Mock Data Service and return a mock member object
             Member testMember = new Member
             {
